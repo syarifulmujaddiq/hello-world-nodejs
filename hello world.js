@@ -1,8 +1,13 @@
-var http = require('http');
+const http = require('http');
 
-http.createServer(function (req, res) {
-  // add a HTTP header:
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.write('Hello World!');
-  res.end();
-}).listen(4001);
+http.createServer((request, response) => {
+
+    response.writeHead(200, {
+        'Content-Type': 'text/plain'
+    });
+  
+    response.write('Hello, World!');
+     
+    response.end();
+
+}).listen(4001); 
